@@ -6,9 +6,12 @@ import java.time.LocalDate;
 public class MainTest extends junit.framework.TestCase{
     private Main main = new Main();
     private HistoriaDeUsuario aux;
+    private EscribirTest aux2;
     public MainTest(){
         main.CrearHistoria("escribir US", "programador", "_requiero_", "_talQue_", "_condiciones_", 3, 300);
-        aux = main.getHistoriaDeLista(0);    
+        main.CrearTest("titulo");
+        aux = main.getHistoriaDeLista(0);
+        aux2 = new EscribirTest("titulo");
     }
 
     @Test
@@ -30,6 +33,7 @@ public class MainTest extends junit.framework.TestCase{
     @Test
     public void testFecha(){
         LocalDate myObj = LocalDate.now();
+        System.out.println(aux.getDate());
         assertEquals(myObj, aux.getDate());
     }
     
@@ -37,4 +41,25 @@ public class MainTest extends junit.framework.TestCase{
     public void testTest(){
         assertEquals(-1,main.BuscarVAnterior("title"));
     }
+    
+    @Test
+    public void testEstadoEnRevision(){
+        EscribirTest e = new EscribirTest("titulo");
+        assertEquals("en revisión", e.getEstado());
+        
+    }
+    
+    @Test
+    public void testFechaTest(){
+        LocalDate myObj = LocalDate.now();
+        System.out.println(aux2.getDate());
+        assertEquals(myObj, aux2.getDate());
+    }
+    
+    @Test
+    public void testDeberiaTenerUS(){
+        aux2.setHistoria(aux);
+        assertEquals(aux, aux2.getHistoria());
+    }
+    
 }

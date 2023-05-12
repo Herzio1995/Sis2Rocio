@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.time.LocalDate; 
 public class Main
 {
-    private  ArrayList<HistoriaDeUsuario>ListaHistorias = new ArrayList<HistoriaDeUsuario>();
+    private ArrayList<HistoriaDeUsuario>ListaHistorias = new ArrayList<HistoriaDeUsuario>();
+    private ArrayList<EscribirTest>ListaTest = new ArrayList<EscribirTest>();
     public Main(){
 
     }
@@ -37,5 +38,10 @@ public class Main
     
     public  HistoriaDeUsuario getUltimaHistoriaDeLista(){
         return ListaHistorias.get(ListaHistorias.size()-1);
+    }
+    
+    public void CrearTest(String titulo){
+        EscribirTest aux2 = new EscribirTest(titulo);
+        
     }
 }
