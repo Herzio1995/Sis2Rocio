@@ -6,12 +6,12 @@ import java.time.LocalDate;
 public class MainTest extends junit.framework.TestCase{
     private Main main = new Main();
     private HistoriaDeUsuario aux;
-    private EscribirTest aux2;
+    private TestC aux2;
     public MainTest(){
         main.CrearHistoria("escribir US", "programador", "_requiero_", "_talQue_", "_condiciones_", 3, 300);
         main.CrearTest("titulo");
         aux = main.getHistoriaDeLista(0);
-        aux2 = new EscribirTest("titulo");
+        aux2 = new TestC("titulo");
     }
 
     @Test
@@ -44,9 +44,8 @@ public class MainTest extends junit.framework.TestCase{
     
     @Test
     public void testEstadoEnRevision(){
-        EscribirTest e = new EscribirTest("titulo");
+        TestC e = new TestC("titulo");
         assertEquals("en revisión", e.getEstado());
-        
     }
     
     @Test
@@ -61,5 +60,4 @@ public class MainTest extends junit.framework.TestCase{
         aux2.setHistoria(aux);
         assertEquals(aux, aux2.getHistoria());
     }
-    
 }

@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class Main
 {
     private ArrayList<HistoriaDeUsuario>ListaHistorias = new ArrayList<HistoriaDeUsuario>();
-    private ArrayList<EscribirTest>ListaTest = new ArrayList<EscribirTest>();
+    private ArrayList<TestC>ListaTest = new ArrayList<TestC>();
     public Main(){
 
     }
@@ -41,7 +41,6 @@ public class Main
     }
     
     public void CrearTest(String titulo){
-        EscribirTest aux2 = new EscribirTest(titulo);
-        
+        TestC aux2 = new TestC(titulo);
     }
 }

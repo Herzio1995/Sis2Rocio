@@ -1,15 +1,14 @@
 import java.time.LocalDate;
-
-public class EscribirTest
+public class TestC
 {
     private  String titulo;
     private  int id;
     private  int version;
-    private  EscribirTest versionDeTest;
+    private TestC versionDeTest;
     private LocalDate fecha;
     private String estado;
     private HistoriaDeUsuario historia;
-    public EscribirTest(String titulo){
+    public TestC(String titulo){
         this.titulo = titulo;
         this.estado = "en revisión";
         this.fecha = LocalDate.now();
@@ -35,11 +34,11 @@ public class EscribirTest
         return version;
     }
     
-    public void setEscribirTestVer(EscribirTest test){
+    public void setEscribirTestVer(TestC test){
         versionDeTest = test;
     }
     
-    public  EscribirTest getEscribirTestVer(){
+    public  TestC getEscribirTestVer(){
         return versionDeTest;
     }
     
